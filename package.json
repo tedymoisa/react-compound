@@ -2,6 +2,10 @@
   "name": "@moisa/react-compound",
   "version": "1.0.0",
   "private": false,
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.moisa.work/"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -33,7 +37,7 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier -w .",
     "clean": "rimraf dist || rm -rf dist",
-    "prepublishOnly": "pnpm -s build"
+    "publish": "pnpm publish --registry https://npm.moisa.work/"
   },
   "peerDependencies": {
     "react": ">=18.2.0 <20",
