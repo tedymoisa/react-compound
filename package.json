@@ -1,12 +1,37 @@
 {
   "name": "@moisa/react-compound",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "description": "Modern, installable React compound-components library with TypeScript and Tailwind v4. Ships ESM, CJS, and types.",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Tedy Gabriel Moisa",
+    "email": "moisatedy@gmail.com",
+    "url": "https://npm.moisa.work"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tedymoisa/react-compound.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tedymoisa/react-compound/issues"
+  },
+  "homepage": "https://github.com/tedymoisa/react-compound#readme",
   "private": false,
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.moisa.work/"
   },
-  "type": "module",
+  "keywords": [
+    "react",
+    "components",
+    "compound-components",
+    "typescript",
+    "tailwind",
+    "ui-library",
+    "esm",
+    "cjs"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -37,7 +62,11 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier -w .",
     "clean": "rimraf dist || rm -rf dist",
-    "publish": "pnpm publish --registry https://npm.moisa.work/"
+    "prepublishOnly": "pnpm -s build"
+  },
+  "engines": {
+    "node": ">=18.17",
+    "pnpm": ">=8"
   },
   "peerDependencies": {
     "react": ">=18.2.0 <20",
