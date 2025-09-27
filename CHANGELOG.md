@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/tedymoisa/react-compound/compare/v1.0.0...v1.1.0) (2025-09-27)
+
+### Features
+
+* add github dependabot ([f45260d](https://github.com/tedymoisa/react-compound/commit/f45260d82e7486f369a2cc8e130ca365e0d0ca11))
+
 ## 1.0.0 (2025-09-27)
 
 ### Bug Fixes
