@@ -1,0 +1,49 @@
+# Node and package managers
+node_modules/
+pnpm-lock.yaml
+.pnpm-debug.log*
+.npmrc.local
+.npmrc.env
+
+# Build outputs
+dist/
+coverage/
+*.log
+*.log.*
+
+# TypeScript
+*.tsbuildinfo
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Editor/OS junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Storybook (if added later)
+storybook-static/
+
+# Tailwind v4 cache or tools
+tools/tailwindcss
+.tailwindcache/
+
+# Test snapshots (optional)
+__snapshots__/
+
+# Temp / misc
+.tmp/
+temp/
+.cache/
+
+# Demo apps (if you add a local demo)
+apps/**/node_modules/
+apps/**/dist/

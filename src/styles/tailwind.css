@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer components {
+  .rc-tabs-list {
+    @apply inline-flex items-center gap-1 rounded-md bg-gray-100 p-1;
+  }
+  .rc-tabs-trigger {
+    @apply rounded-md px-3 py-1.5 text-sm font-medium text-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 data-[state=active]:bg-white data-[state=active]:text-gray-900;
+  }
+  .rc-tabs-content {
+    @apply mt-3;
+  }
+}
