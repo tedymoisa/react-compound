@@ -62,21 +62,6 @@ export default [
 
       ...reactHooks.configs.recommended.rules,
 
-      "import/order": [
-        "warn",
-        {
-          "newlines-between": "always",
-          alphabetize: { order: "asc", caseInsensitive: true },
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            ["parent", "sibling", "index"],
-            "object",
-            "type",
-          ],
-        },
-      ],
       "import/no-unresolved": "off",
     },
   },
