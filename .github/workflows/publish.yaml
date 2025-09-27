@@ -15,7 +15,7 @@ jobs:
       REGISTRY_URL: https://npm.moisa.work/
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
