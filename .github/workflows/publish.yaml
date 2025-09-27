@@ -1,0 +1,44 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      REGISTRY_URL: https://npm.moisa.work/
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: ${{ env.REGISTRY_URL }}
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Configure npm auth
+        run: |
+          echo "@moisa:registry=${{ env.REGISTRY_URL }}" >> .npmrc
+          echo "//npm.moisa.work/:_authToken=${NPM_TOKEN}" >> .npmrc
+          echo "always-auth=true" >> .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish package
+        run: pnpm publish --registry $REGISTRY_URL

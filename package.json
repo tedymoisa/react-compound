@@ -64,7 +64,7 @@
     "format": "prettier -w .",
     "clean": "rimraf dist || rm -rf dist",
     "prepublishOnly": "pnpm -s build",
-    "release:local": "semantic-release --no-ci"
+    "release:local": "semantic-release --no-ci --dry-run"
   },
   "engines": {
     "node": ">=18.17",
