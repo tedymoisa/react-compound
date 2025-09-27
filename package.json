@@ -1,6 +1,6 @@
 {
   "name": "@moisa/react-compound",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Modern, installable React compound-components library with TypeScript and Tailwind v4. Ships ESM, CJS, and types.",
   "license": "MIT",
   "type": "module",
@@ -52,12 +52,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm -s build:css && pnpm -s build:ts",
-    "build:ts": "tsup",
-    "build:css": "pnpm tailwindcss -i ./src/styles/tailwind.css -o ./dist/styles/index.css --minify",
+    "build": "pnpm -s build:ts && pnpm -s build:css",
+    "build:ts": "pnpm -s typecheck && tsup",
+    "build:css": "pnpm tailwindcss -i ./src/styles/tailwind.css -o ./dist/styles/index.css -m",
     "dev": "pnpm -s build:css && tsup --watch",
     "test": "vitest",
     "test:watch": "vitest --watch",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier -w .",

@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
+import { cn } from "../../utils/cn";
 import { useActiveTab } from "./Tabs";
-import { cn } from "../utils/cn";
 
 /**
  * Props for a tab panel.

@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
+import { cn } from "../../utils/cn";
 import { useActiveTab, useSetActiveTab, useTabsActivationMode } from "./Tabs";
-import { cn } from "../utils/cn";
 
 /**
  * Props for an individual tab trigger.

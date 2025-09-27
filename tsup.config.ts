@@ -10,4 +10,7 @@ export default defineConfig({
   minify: false,
   target: "es2022",
   external: ["react", "react-dom"],
+  outExtension({ format }) {
+    return { js: format === "esm" ? ".mjs" : ".cjs" };
+  },
 });

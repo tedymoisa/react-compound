@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 
-import { cn } from "../utils/cn";
+import { cn } from "../../utils/cn";
 
 /**
  * Props for the container of tab triggers.
