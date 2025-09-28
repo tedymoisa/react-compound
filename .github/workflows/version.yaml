@@ -1,14 +1,17 @@
 name: Version and Tag
 
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
 
 permissions:
   contents: write
 
 jobs:
   version:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -22,11 +25,19 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
-        run: pnpm run build
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
 
       - name: Semantic Release
         env:
